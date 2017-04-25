@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+  <meta name="description" content="CatReloaded's Scope15 event website">
+  <meta name="keywords" content="CatReloaded,scope15,catscope,developers">
+  <meta name="author" content="CATReloaded">
+  <title>Scope 15</title>
+  <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/favicon.ico' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/font-awesome.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/font-awesome.min.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
+  <script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="{% static 'js/jqhome.js' %}"></script>
+</head>
+<body>
+	<header style="background:url({% static 'images/scope-web-page.png' %}) no-repeat ;">
+		<div id="slideshow">
+      <nav class="clearfix">
+        <a href="#"><h4>Scope<span class="black" >15</span></h4></a>
+        <ul class="mainnav ">
+          <li><a href="#LOCATION">LOCATION</a></li>
+          <li><a href="#ROLLIN">ROLL IN</a></li>
+          <li><a href="#SCHEDULE">SCHEDULE</a></li>
+          <li><a href="#SPEAKERS">SPEAKERS</a></li>
+          <li> <a href="#ABOUT">ABOUT</a></li>
+        </ul>
+      </nav>
+			<div class="firstslidewords">
+				<h1>Scope<span class="black">15</span></h1>
+        <br>
+        <H2>Are You Ready To Meet The Expetrs!</H2>
+		  </div>
+    </div><!--th whole slide -->
+    <div id="ABOUT" class="about">
+      <h5>
+        <i class="fa fa-question-circle fac" aria-hidden="true"></i>
+        <span class="Cred">About Scope</span><span class="black">15</span>
+      </h5>
+      <div class="cairofont">
+        <h5>
+          <span class="Cred">CAT Scope</span> is a 2 days conference. Organized by the <span class="Cred">CAT Reloaded</span> Team where pure technical sessions are held by highly expeinced Engineers and Computer Lovers.
+        </h5>
+        <h5>
+          These sessions are mainly focused on IT computer Science and some sessions
+          may be soft-skills, Scope sessions range from novice to gurus.
+          <span class="Cred">Scope15</span> is a MUST attend event for everyone interested
+          in computer science.
+        </h5>
+        <a href="https://www.facebook.com/events/1458059567557984/" target="_blank">
+          <button class="buttonfb">
+            <i class="fa fa-facebook-square" aria-hidden="true"></i>
+            Facebook Event
+          </button>
+        </a>
+        <br>
+      </div>
+    </div>
+	</header> <!-- end of header -->
+	<main class="clearfix">
+    <h2 class="Cred"><i class="fa fa-users fac" aria-hidden="true"> </i>SPEAKERS</h2>
+    <section id="SPEAKERS" class="speakers">
+      {% for speaker in speakers %}
+      <article id="{{ speaker.id }}">
+        <a>
+          <img alt="{{ speaker.name }}" src="{{ speaker.image.url }}">
+        </a>
+        <a>
+          <h3>{{ speaker.name }}</h3>
+        </a>
+      </article>
+      <div id="pop-{{ speaker.id }}" class="pop hidden">
+        <div class="contentt">
+         <img alt="image" src="{{ speaker.image.url }}">
+         <p class="bigtxt pt80">{{ speaker.name }}</p>
+         <p class="Cred bigtxt">{{ speaker.title }}</p>
+         <p class="speakerbio"><br>{{ speaker.bio }}</p>
+         <p class="centertxt close"> X </p>
+       </div>
+      </div>
+      {% endfor %}
+
+    </section>
+    <br>
+    <br>
+	</main>
+
+  <div id="SCHEDULE" class="SCHEDULE centertxt clearfix" style="background:url({% static 'images/CatBack.png' %}) fixed;">
+    <h1><i class="fa fa-calendar" aria-hidden="true"></i>SCHEDULE</h1>
+    <div class="days">
+     <button class="btnday Cred leftround activebtn">Day 1 | 29 April</button>
+     <button class="btnday Cred rightround">Day 2 | 30 April</button>
+    </div>
+    <div class="dayone">
+      {% for session in day_one %}
+      <div class="{% cycle 'leftschedual' 'rightschedual' as dir %}">
+        <div class="{% cycle 'leftelement' 'rightelement' %}">
+          <p>
+            <span class="Cred">{{ session.title }}</span><br>
+            {{ session.speaker.name }}
+          </p>
+        </div>
+        <div class="{% cycle 'leftelmentsvg' 'rightelmentsvg' %}">
+          <p> <i class="fa fa-calendar fac" aria-hidden="true"></i></p>
+        </div>
+        <h5 class="Cred"><br>{{ session.date_time|time:"h:i:A" }}</h5>
+      </div>
+      {% endfor %}
+    </div>
+    <div class="daytwo hidden">
+      {% for session in day_two %}
+      <div class="{% cycle 'leftschedual' 'rightschedual' as dir %}">
+        <div class="{% cycle 'leftelement' 'rightelement' %}">
+          <p>
+            <span class="Cred">{{ session.title }}</span><br>
+            {{ session.speaker.name }}
+          </p>
+        </div>
+        <div class="{% cycle 'leftelmentsvg' 'rightelmentsvg' %}">
+          <p> <i class="fa fa-calendar fac" aria-hidden="true"></i></p>
+        </div>
+        <h5 class="Cred"><br>{{ session.date_time|time:"H:i" }}</h5>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <div id="ROLLIN" class="rollin centertxt">
+    <h1 class="Cred"><i class="fa fa-hand-paper-o fac" aria-hidden="true"></i> ROLLIN</h1>
+    <div class="mb50">
+      <a href="https://catreloaded.typeform.com/to/HSXswf" target="_blank"> <button class="buttonfb mr10 prl">Register</button> </a>
+      <a href="mailto:catreloaded.support@catreloaded.net"> <button class="buttonfb mr10 bgcb prl">Support us</button></a>
+    </div>
+  </div>
+  <div id="LOCATION" class="LOCATION centertxt">
+    <h1><i class="fa fa-map-marker " aria-hidden="true"></i> LOCATION</h1>
+    <br>
+    <img alt="map" src="{% static 'images/map.png' %}">
+  </div>
+  <div class="teaminfo centertxt" style="background:url({% static 'images/info.png' %});">
+    <h3 class=" prl" >
+      <span class="black">CAT Reloaded</span>
+      is non-profit foundation focused on Computer Science and IT<br> especially Open Source technologies.
+    </h3>
+    <a href="http://catreloaded.org" target="_blank">
+      <button class="buttonfb mr10 bgcb prl">
+        <i class="fa fa-link " aria-hidden="true"></i> CATReloaded Site
+      </button>
+    </a>
+    <div class="socialmedia">
+      <a href="http://fb.com/CATReloaded" target="_blank"><img alt="facebook" class="maxwidth30px" src="{% static 'images/facebook.svg' %}" /></a>
+      <a href="http://twitter.com/catreloaded" target="_blank"><img alt="twitter" class="maxwidth30px" src="{% static 'images/twitter.svg' %}"/></a>
+      <a href="http://github.com/CATReloaded" target="_blank"><img alt="github" class="maxwidth30px" src="{% static 'images/github.svg' %}" /></a>
+      <a href="http://youtube.com/user/C4TReloaded" target="_blank"><img alt="youtube" class="maxwidth30px" src="{% static 'images/youtube.svg' %}"/></a>
+      <a href="https://linkedin.com/company-beta/13179685/" target="_blank"><img alt="linkedin" class="maxwidth30px" src="{% static 'images/linkedin.svg' %}"/></a>
+      <a href="https://plus.google.com/u/1/112664705241777101516" target="_blank"><img alt="g+" class="maxwidth30px" src="{% static 'images/google-plus.svg' %}"/></a>
+    </div>
+  </div>
+  <footer class="bgcb centertxt">
+    <p>CATRealoaded 2017 | SCOPE 15</p>
+  </footer>
+</body>
+</html>
