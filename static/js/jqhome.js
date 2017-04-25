@@ -6,18 +6,20 @@ $("document").ready(function(){
   });
 
   $("article").on("click", function(){
-    //opening
-    $(".pop").removeClass("hidden")
+    $(".pop").addClass("hidden")
+    var elmid ="#pop-" + $(this).attr('id');
+    var targeted = $(elmid);
+    targeted.removeClass("hidden")
     $('html, body').animate({
-      scrollTop: $(".pop").offset().top
+      scrollTop: targeted.offset().top
     }, 800);
   });
 
-  $(".rightround").on("click", function(){
+    $(".rightround").on("click", function(){
 //closing
 
-  $(".daytwo").removeClass("hidden")
-  $(".dayone").addClass("hidden")
+  $(".daytwo").removeClass("hiddendisplay")
+  $(".dayone").addClass("hiddendisplay")
   $(".leftround").removeClass("activebtn");
   $(this).addClass( "activebtn" );
 
@@ -29,8 +31,8 @@ $("document").ready(function(){
     $(".leftround").on("click", function(){
 
 //closing
-  $(".dayone").removeClass("hidden")
-  $(".daytwo").addClass("hidden")
+  $(".dayone").removeClass("hiddendisplay")
+  $(".daytwo").addClass("hiddendisplay")
   $(".rightround").removeClass("activebtn");
   $(this).addClass( "activebtn" );
 

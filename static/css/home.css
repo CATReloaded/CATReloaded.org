@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Cairo:400');
 @font-face {
    font-family: myFirstFont;
-   src: url(../Fonts/Quantify_Bold.ttf);
+   src: url(../fonts/Quantify_Bold.ttf);
 }
 .bgcb{
   background-color: black !important;
@@ -57,8 +57,12 @@ max-width: 30px;
 /*the solution for it^ */
 
 .hidden {
-  display: none;
+    opacity: 0;
+  z-index: -1;
+}
 
+.hiddendisplay{
+display: none;
 }
 
 a:click{
@@ -320,7 +324,12 @@ box-shadow: 0px 0px 41px -11px rgba(0,0,0,0.3);
   box-shadow: 5.5px 9.526px 29px 0px rgba(34, 30, 31, 0.055);
   background-color: white;
   border-radius: 15px;
+        -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    transition: all 1s ease;
 }
+
 .contentt{
   padding-top: 40px;
   width: 60%;
@@ -395,7 +404,6 @@ div button.activebtn{
 
 
 
-
 .rightschedual{
   height: 220px;
   margin-right: 17%;
@@ -437,7 +445,7 @@ div button.activebtn{
   background-color: white;
   float: right;
   margin-right: 3% !important;
-  margin-top: 6%;
+  margin-top: 7%;
   border-radius: 50%;
   margin-left: 20px;
 }
@@ -502,7 +510,7 @@ div button.activebtn{
   background-color: white;
   float: left;
   margin-left: 3%;
-  margin-top: 6%;
+  margin-top: 8.75%;
   border-radius: 50%;
   margin-right: 20px;
 }
@@ -512,7 +520,7 @@ div button.activebtn{
 }
 
 .leftschedual h5 {
-  padding-top: 5%;
+  padding-top: 7%;
   text-align: left;
   font-size: 1.7em;
   margin-top: 5px;
@@ -521,7 +529,6 @@ div button.activebtn{
 .onelinefixh5{
   padding-top: 4.5% !important;
 }
-
 
 
 
