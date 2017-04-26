@@ -21,5 +21,4 @@ class ScopeIndex(TemplateView):
         context['speakers'] = speakers
         context['day_one'] = day_one_sessions
         context['day_two'] = day_two_sessions
-        print(context)
         return context

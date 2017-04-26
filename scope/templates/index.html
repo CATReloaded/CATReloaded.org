@@ -76,7 +76,7 @@
          <img alt="{{ speaker.name }}" src="{{ speaker.image }}">
          <p class="bigtxt pt80">{{ speaker.name }}</p>
          <p class="Cred bigtxt">{{ speaker.title }}</p>
-         <p class="speakerbio"><br>{{ speaker.bio }}</p>
+         <p class="speakerbio"><br>{{ speaker.bio|linebreaks }}</p>
          <p class="centertxt mb50">
            <br></br>
            <a href="{{ speaker.social }}" target="_blank">
