@@ -15,7 +15,7 @@ INSTALLED_APPS += (
 
 DATABASES['default'] = dj_database_url.config()
 SECRET_KEY = env('DJANGO_SECRET_KEY')
-# Honor the 'X-Forwarded-Proto' SECURE_PROXY_SSL_HEADERer for request.is_secure()
+
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 SECURE_SSL_REDIRECT = env.bool('DJANGO_SECURE_SSL_REDIRECT', default=True)
 
