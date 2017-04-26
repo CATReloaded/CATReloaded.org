@@ -72,6 +72,7 @@ a:click{
 a button{
   outline: none;
 }
+
 header{
   z-index: -1;
 }
@@ -159,10 +160,10 @@ i {
 }
 .firstslidewords {
   display: block;;
-text-align: center;
-padding-top: 8%;
-
+  text-align: center;
+  padding-top: 4%;
 }
+
 h1 {
   display: inline-block;
   margin: 30px auto;
