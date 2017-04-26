@@ -24,6 +24,8 @@ SECRET_KEY = 'o^9t2%xenttlq_4!d+9fzi=2pdjfk)&)u$1%3k8t$lgt$em$5n'
 
 # Application definition
 
+DATABASES = {}
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
