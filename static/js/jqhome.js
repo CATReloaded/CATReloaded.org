@@ -5,6 +5,16 @@ $("document").ready(function(){
     $(".pop").addClass( "hidden" );
   });
 
+  $(".mainnav li").on("click",function(){
+    console.log("working");
+    var elmid ="." + $(this).attr('id') +"";
+
+    $('html body').animate({
+      scrollTop: $(elmid).offset().top
+    }, 1000);
+
+  });
+
   $("article").on("click", function(){
     $(".pop").addClass("hidden")
     var elmid ="#pop-" + $(this).attr('id');

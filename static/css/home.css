@@ -258,8 +258,8 @@ font-size: 2em;
   cursor: pointer;
 }
 
-  /*main stuff*/
-  main{
+/*main stuff*/
+main{
     padding-top: 50px;
     width: 78%;
     margin: 0 auto;
@@ -296,7 +296,8 @@ article {
   margin-right: 1.4%;
   margin-bottom:40px;
   border-radius: 15px;
-  width:21%
+  width:21%;
+  cursor: pointer;
 
 }
 
