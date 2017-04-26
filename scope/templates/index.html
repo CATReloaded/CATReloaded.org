@@ -65,7 +65,7 @@
       {% for speaker in speakers %}
       <article id="{{ speaker.id }}">
         <a>
-          <img alt="{{ speaker.name }}" src="{{ speaker.image.url }}">
+          <img alt="{{ speaker.name }}" src="{{ speaker.image }}">
         </a>
         <a>
           <h3>{{ speaker.name }}</h3>
@@ -73,7 +73,7 @@
       </article>
       <div id="pop-{{ speaker.id }}" class="pop hidden">
         <div class="contentt">
-         <img alt="image" src="{{ speaker.image.url }}">
+         <img alt="{{ speaker.name }}" src="{{ speaker.image }}">
          <p class="bigtxt pt80">{{ speaker.name }}</p>
          <p class="Cred bigtxt">{{ speaker.title }}</p>
          <p class="speakerbio"><br>{{ speaker.bio }}</p>
@@ -105,11 +105,11 @@
         <div class="{% cycle 'leftelmentsvg' 'rightelmentsvg' %}">
           <p> <i class="fa fa-calendar fac" aria-hidden="true"></i></p>
         </div>
-        <h5 class="Cred"><br>{{ session.date_time|time:"h:i:A" }}</h5>
+        <h5 class="Cred"><br>{{ session.date_time|time:"h:i A" }}</h5>
       </div>
       {% endfor %}
     </div>
-    <div class="daytwo hidden">
+    <div class="daytwo hiddendisplay">
       {% for session in day_two %}
       <div class="{% cycle 'leftschedual' 'rightschedual' as dir %}">
         <div class="{% cycle 'leftelement' 'rightelement' %}">
@@ -121,7 +121,7 @@
         <div class="{% cycle 'leftelmentsvg' 'rightelmentsvg' %}">
           <p> <i class="fa fa-calendar fac" aria-hidden="true"></i></p>
         </div>
-        <h5 class="Cred"><br>{{ session.date_time|time:"H:i" }}</h5>
+        <h5 class="Cred"><br>{{ session.date_time|time:"h:i A" }}</h5>
       </div>
       {% endfor %}
     </div>

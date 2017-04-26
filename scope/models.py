@@ -5,7 +5,7 @@ class Speaker(models.Model):
     name = models.CharField(max_length=80, null=False, blank=False)
     title = models.CharField(max_length=200, null=True, blank=True)
     bio = models.TextField(null=True, blank=True)
-    image = models.ImageField(upload_to="speakers/")
+    image = models.CharField(max_length=200, null=True, editable=False)
 
     def __str__(self):
         return "Speaker {}: {}".format(self.id, self.name)

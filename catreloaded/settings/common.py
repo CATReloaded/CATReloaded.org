@@ -105,5 +105,7 @@ STATIC_ROOT = str(BASE_DIR('staticfiles'))
 STATICFILES_DIRS = [
     str(BASE_DIR.path('static')),
 ]
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+
 MEDIA_URL = '/media/'
 MEDIA_ROOT = str(BASE_DIR('media'))
