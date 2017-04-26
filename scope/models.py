@@ -13,8 +13,11 @@ class Speaker(models.Model):
 
 class Session(models.Model):
     title = models.CharField(max_length=200, null=False, blank=False)
-    speaker = models.ForeignKey(Speaker, related_name='sessions')
+    speaker = models.ForeignKey(Speaker, related_name='sessions', null=True, blank=True)
     date_time = models.DateTimeField()
+
+    class Meta:
+        ordering = ('date_time',)
 
     def __str__(self):
         return "Session {}: {}".format(self.id, self.title)
